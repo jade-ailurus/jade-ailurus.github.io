@@ -83,12 +83,29 @@
             opacity: 1;
         }
 
-        .home-image {
+        .home-image-wrapper {
             flex: 1;
             max-width: 50%;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 50%, #d299c2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .home-image {
+            width: 100%;
+            flex: 1;
             border-radius: 24px;
+            transition: background 0.3s ease;
+        }
+
+        .daily-color-note {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-align: right;
+            opacity: 0.7;
+            line-height: 1.4;
+            padding-top: 2rem;
         }
 
         @media (max-width: 1100px) {
@@ -102,7 +119,7 @@
                 max-width: 100%;
             }
 
-            .home-image {
+            .home-image-wrapper {
                 width: 100%;
                 max-width: 400px;
             }
@@ -172,7 +189,10 @@
                             <span class="home-logo-text">Current affiliation</span>
                         </div>
                     </div>
-                    <div class="home-image"></div>
+                    <div class="home-image-wrapper">
+                        <div class="home-image" id="dailyColorBox"></div>
+                        <p class="daily-color-note" id="dailyColorNote"></p>
+                    </div>
                 </div>
             </div>
         </main>

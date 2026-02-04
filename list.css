@@ -91,10 +91,20 @@
     font-family: var(--font-main);
     font-size: 1rem;
     font-weight: 300;
-    color: var(--text-secondary);
+    color: #4a4a4f;
     text-decoration: none;
     padding: 0.5rem 0;
     transition: color 0.2s ease;
+}
+
+[data-theme="dark"] .sidebar-link {
+    color: #a0a0a5;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .sidebar-link {
+        color: #a0a0a5;
+    }
 }
 
 .sidebar-link:hover {

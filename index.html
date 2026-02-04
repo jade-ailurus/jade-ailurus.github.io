@@ -101,11 +101,21 @@
         .daily-color-note {
             font-family: 'Courier New', monospace;
             font-size: 0.75rem;
-            color: var(--text-secondary);
+            color: #3a3a3c;
             text-align: right;
-            opacity: 0.7;
+            opacity: 0.85;
             line-height: 1.4;
             padding-top: 2rem;
+        }
+
+        [data-theme="dark"] .daily-color-note {
+            color: #b0b0b5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) .daily-color-note {
+                color: #b0b0b5;
+            }
         }
 
         @media (max-width: 1100px) {

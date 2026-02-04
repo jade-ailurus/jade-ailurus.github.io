@@ -1,0 +1,258 @@
+/* ========================================
+   Post Template - OpenAI Style
+   Works with sidebar from list.css
+   ======================================== */
+
+/* Post Article */
+.post-article {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.post-header {
+    margin: 0 0 2rem 0;
+    padding: 0;
+}
+
+.post-category {
+    display: none;
+}
+
+.post-title {
+    font-family: var(--font-main);
+    font-size: 3rem;
+    font-weight: 450;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.post-subtitle {
+    font-family: var(--font-main);
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Post Content */
+.post-content {
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+.post-content h2 {
+    font-size: 1.5rem;
+    font-weight: 450;
+    color: var(--text-primary);
+    margin: 3rem 0 1rem;
+    letter-spacing: -0.02em;
+}
+
+.post-content h3 {
+    font-size: 1.25rem;
+    font-weight: 450;
+    color: var(--text-primary);
+    margin: 2rem 0 0.75rem;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content ul,
+.post-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+.post-content a {
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.post-content a:hover {
+    opacity: 0.7;
+}
+
+.post-lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+/* Contact Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+}
+
+.contact-label {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.contact-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* Document Grid */
+.doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.doc-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.doc-card:hover {
+    transform: translateY(-2px);
+}
+
+.doc-card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.doc-card-title {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.doc-card-desc {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--text-primary);
+}
+
+/* Publication Items */
+.publication-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--line-color);
+}
+
+.publication-item:last-child {
+    border-bottom: none;
+}
+
+.publication-item h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    font-weight: 450;
+    color: var(--text-primary);
+}
+
+.pub-meta {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.pub-question {
+    font-style: italic;
+    color: var(--text-primary);
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--line-color);
+    margin: 1rem 0;
+}
+
+.pub-links {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.pub-links a {
+    color: var(--text-primary);
+    margin-right: 0.5rem;
+}
+
+/* Download Link */
+.download-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--text-primary);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 450;
+    transition: opacity 0.2s ease;
+    margin-right: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.download-link:hover {
+    opacity: 0.7;
+}
+
+.download-link:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .post-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .post-content {
+        font-size: 1rem;
+    }
+
+    .post-lead {
+        font-size: 1.1rem;
+    }
+}

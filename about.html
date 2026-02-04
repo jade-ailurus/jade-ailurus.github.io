@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Jaehyun Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <a href="index.html" class="header-logo">Jaehyun Park</a>
+    </header>
+
+    <!-- Theme Toggle (Bottom Right) -->
+    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+    </button>
+
+    <div class="page-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="about.html" class="sidebar-link active">About</a>
+                <a href="philosophy.html" class="sidebar-link">Philosophy</a>
+                <a href="blog.html" class="sidebar-link">Blog</a>
+                <a href="projects.html" class="sidebar-link">Projects</a>
+                <a href="publications.html" class="sidebar-link">Publications</a>
+                <a href="tmi.html" class="sidebar-link">TMI</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                <article class="post-article">
+                    <header class="post-header">
+                        <p class="post-category">About</p>
+                        <h1 class="post-title">Jaehyun Park</h1>
+                        <p class="post-subtitle">PhD Applicant in Operations Research & Applied Mathematics</p>
+                    </header>
+
+                    <div class="post-content">
+                        <p class="post-lead">
+                            I am a researcher interested in optimization theory and its applications.
+                            My work focuses on understanding sensitivity and convergence analysis of optimization
+                            frameworks, with applications to utility functions, market matching, and inverse problems.
+                        </p>
+
+                        <h2>Education</h2>
+                        <p>
+                            <strong>Seoul National University</strong><br>
+                            B.Sc. in Department of Mathematical Sciences<br>
+                            B.Sc. in Mathematical Modeling and Optimization, College of Liberal Studies (GPA: 4.0/4.0)<br>
+                            B.Eng. in Department of Architecture and Architectural Engineering (GPA: 3.86/4.0)<br>
+                            Mar 2020 - Aug 2027 (Expected)
+                        </p>
+                        <p>
+                            <strong>Purdue University</strong> (Exchange)<br>
+                            Mathematics and Industrial Engineering<br>
+                            Aug 2025 - Dec 2025
+                        </p>
+
+                        <h2>Research Interests</h2>
+                        <ul>
+                            <li>Optimization Theory: Sensitivity and Convergence Analysis, Large Scale Complexity</li>
+                            <li>Applications: Utility Function, Market Matching, Inverse Problems</li>
+                            <li>Reinforcement Learning for Scheduling and Operations</li>
+                            <li>Bi-level Optimization and Stackelberg Games</li>
+                        </ul>
+
+                        <h2>Research Experience</h2>
+                        <p>
+                            <strong>Operations Management Lab, SNU Business</strong><br>
+                            Advisor: Taewoo Lee (Dec 2025 - Present)<br>
+                            Quantified routing discrepancies by modeling ISP problems.
+                            Implementing Max Ent IRL methods for solving bi-level optimization (Stackelberg competition).
+                        </p>
+                        <p>
+                            <strong>Distributed Control Lab, Purdue IE</strong><br>
+                            Advisor: Seokcheon Lee (Nov 2025 - Present)<br>
+                            Proposed Q-learning methodology for scheduling problems with analytical performance bounds.
+                            Developed robust reinforcement learning framework for optimal scheduling under stochastic perturbations.
+                        </p>
+
+                        <h2>Contact</h2>
+                        <div class="contact-grid">
+                            <a href="mailto:geneouspark@snu.ac.kr" class="contact-item">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">geneouspark@snu.ac.kr</span>
+                            </a>
+                            <a href="https://github.com/jade-ailurus" class="contact-item" target="_blank">
+                                <span class="contact-label">GitHub</span>
+                                <span class="contact-value">jade-ailurus</span>
+                            </a>
+                        </div>
+
+                        <h2>CV & Coursework</h2>
+                        <p>
+                            <a href="docs/cv.pdf" class="download-link" target="_blank">Download CV (PDF)</a>
+                            <a href="docs/coursework.pdf" class="download-link" target="_blank">Download Coursework (PDF)</a>
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <footer class="copyright-footer">© Jaehyun Park</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

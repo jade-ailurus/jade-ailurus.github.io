@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Jaehyun Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <a href="index.html" class="header-logo">Jaehyun Park</a>
+    </header>
+
+    <!-- Theme Toggle (Bottom Right) -->
+    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+    </button>
+
+    <div class="page-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="about.html" class="sidebar-link">About</a>
+                <a href="philosophy.html" class="sidebar-link">Philosophy</a>
+                <a href="blog.html" class="sidebar-link">Blog</a>
+                <a href="projects.html" class="sidebar-link">Projects</a>
+                <a href="publications.html" class="sidebar-link active">Publications</a>
+                <a href="tmi.html" class="sidebar-link">TMI</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                <article class="post-article">
+                    <header class="post-header">
+                        <p class="post-category">Publications</p>
+                        <h1 class="post-title">Research & Papers</h1>
+                        <p class="post-subtitle">The questions I've tried to answer</p>
+                    </header>
+
+                    <div class="post-content">
+                        <p class="post-lead">
+                            Beyond the papers themselves, I want to share the questions that
+                            motivated each piece of work. The questions we ask reveal as much
+                            about us as the answers we find.
+                        </p>
+
+                        <div class="publication-item">
+                            <h3>Hierarchical Energy-Aware Job Dispatch Using Reinforcement Learning Framework for Airport Electric Ground Support Equipment</h3>
+                            <p class="pub-meta">Taeho Jeong, Jaemin Park, <strong>Jaehyun Park</strong>, Donghyun Kim, Vishvesh Khanzode, Seockcheon Lee · Working Paper · Nov 2025</p>
+                            <blockquote class="pub-question">
+                                "How can we optimize the scheduling of electric ground support equipment at airports while balancing energy efficiency and operational constraints?"
+                            </blockquote>
+                            <p>
+                                This work proposes a hierarchical reinforcement learning framework for dispatching
+                                electric ground support equipment (eGSE) at airports. The framework addresses the
+                                complex scheduling problem while considering energy consumption patterns, charging
+                                infrastructure constraints, and real-time operational demands.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <footer class="copyright-footer">© Jaehyun Park</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

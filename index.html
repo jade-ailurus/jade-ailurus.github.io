@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaehyun Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="list.css">
+    <style>
+        .home-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 2rem;
+            min-height: calc(100vh - 60px - 6rem);
+            padding-top: 4rem;
+        }
+
+        .home-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+            max-width: 45%;
+        }
+
+        .home-text-top {
+            /* 상단 텍스트 영역 */
+        }
+
+        .home-name {
+            font-family: var(--font-main);
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .home-subtitle {
+            font-family: var(--font-main);
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            margin-bottom: 2.75rem;
+        }
+
+        .home-welcome {
+            font-family: var(--font-main);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .home-logo {
+            margin-top: auto;
+            padding-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .home-logo-text {
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--text-secondary);
+        }
+
+        .home-logo img {
+            height: 40px;
+            width: auto;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        .home-logo a:hover img {
+            opacity: 1;
+        }
+
+        .home-image {
+            flex: 1;
+            max-width: 50%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 50%, #d299c2 100%);
+            border-radius: 24px;
+        }
+
+        @media (max-width: 1100px) {
+            .home-content {
+                flex-direction: column;
+                gap: 2rem;
+                align-items: flex-start;
+            }
+
+            .home-text {
+                max-width: 100%;
+            }
+
+            .home-image {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .home-logo {
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .home-name {
+                font-size: 2.5rem;
+            }
+
+            .home-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .home-welcome {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <a href="index.html" class="header-logo">Jaehyun Park</a>
+    </header>
+
+    <!-- Theme Toggle (Bottom Right) -->
+    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+    </button>
+
+    <div class="page-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="about.html" class="sidebar-link">About</a>
+                <a href="philosophy.html" class="sidebar-link">Philosophy</a>
+                <a href="blog.html" class="sidebar-link">Blog</a>
+                <a href="projects.html" class="sidebar-link">Projects</a>
+                <a href="publications.html" class="sidebar-link">Publications</a>
+                <a href="tmi.html" class="sidebar-link">TMI</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                <div class="home-content">
+                    <div class="home-text">
+                        <div class="home-text-top">
+                            <h1 class="home-name">Jaehyun Park</h1>
+                            <p class="home-subtitle">
+                                PhD Applicant in<br>
+                                Operations Research &<br>
+                                Applied Mathematics
+                            </p>
+                            <p class="home-welcome">Welcome to my website!</p>
+                        </div>
+                        <div class="home-logo">
+                            <a href="https://www.snu.ac.kr" target="_blank">
+                                <img src="images/snu_logo.png" alt="Seoul National University">
+                            </a>
+                            <span class="home-logo-text">Current affiliation</span>
+                        </div>
+                    </div>
+                    <div class="home-image"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="copyright-footer">© Jaehyun Park</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

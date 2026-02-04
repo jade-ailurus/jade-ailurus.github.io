@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Jaehyun Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="list.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <a href="index.html" class="header-logo">Jaehyun Park</a>
+    </header>
+
+    <!-- Theme Toggle (Bottom Right) -->
+    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+    </button>
+
+    <div class="page-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="about.html" class="sidebar-link">About</a>
+                <a href="philosophy.html" class="sidebar-link">Philosophy</a>
+                <a href="blog.html" class="sidebar-link active">Blog</a>
+                <a href="projects.html" class="sidebar-link">Projects</a>
+                <a href="publications.html" class="sidebar-link">Publications</a>
+                <a href="tmi.html" class="sidebar-link">TMI</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                <h1 class="page-title" id="pageTitle">All</h1>
+
+                <!-- Controls Row -->
+                <div class="controls-row">
+                    <div class="category-tabs">
+                        <button class="category-tab" data-category="notes">Research Notes</button>
+                        <button class="category-tab" data-category="tutorials">Tutorials</button>
+                        <button class="category-tab" data-category="thoughts">Thoughts</button>
+                        <button class="category-tab active" data-category="all">All</button>
+                    </div>
+
+                    <div class="right-controls">
+                        <div class="dropdown-container">
+                            <button class="dropdown-btn" id="filterBtn">
+                                Filter
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="4" y1="6" x2="20" y2="6"/>
+                                    <line x1="4" y1="12" x2="14" y2="12"/>
+                                    <line x1="4" y1="18" x2="8" y2="18"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu filter-menu" id="filterMenu">
+                                <div class="filter-column">
+                                    <h4>Topic</h4>
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="topic-notes" value="notes">
+                                        <label for="topic-notes">Research Notes</label>
+                                    </div>
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="topic-tutorials" value="tutorials">
+                                        <label for="topic-tutorials">Tutorials</label>
+                                    </div>
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="topic-thoughts" value="thoughts">
+                                        <label for="topic-thoughts">Thoughts</label>
+                                    </div>
+                                </div>
+                                <div class="filter-column">
+                                    <h4>Year</h4>
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="year-2025" value="2025">
+                                        <label for="year-2025">2025</label>
+                                    </div>
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="year-2024" value="2024">
+                                        <label for="year-2024">2024</label>
+                                    </div>
+                                </div>
+                                <div class="filter-footer">
+                                    <button class="filter-cancel" id="filterCancel">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-container">
+                            <button class="dropdown-btn" id="sortBtn">
+                                Sort
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 9l6 6 6-6"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu sort-menu" id="sortMenu">
+                                <div class="sort-option">
+                                    <input type="radio" name="sort" id="sort-newest" value="newest" checked>
+                                    <label for="sort-newest">Newest → Oldest</label>
+                                </div>
+                                <div class="sort-option">
+                                    <input type="radio" name="sort" id="sort-oldest" value="oldest">
+                                    <label for="sort-oldest">Oldest → Newest</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="view-toggle">
+                            <button class="view-btn active" id="gridViewBtn" aria-label="Grid view">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="3" y="3" width="7" height="7" rx="1"/>
+                                    <rect x="14" y="3" width="7" height="7" rx="1"/>
+                                    <rect x="3" y="14" width="7" height="7" rx="1"/>
+                                    <rect x="14" y="14" width="7" height="7" rx="1"/>
+                                </svg>
+                            </button>
+                            <button class="view-btn" id="listViewBtn" aria-label="List view">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="3" y1="6" x2="21" y2="6"/>
+                                    <line x1="3" y1="12" x2="21" y2="12"/>
+                                    <line x1="3" y1="18" x2="21" y2="18"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid View -->
+                <div class="posts-grid" id="postsGrid">
+                    <a href="blog/post-1.html" class="post-card" data-category="notes">
+                        <div class="card-image-wrapper">
+                            <div class="card-placeholder" style="background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="card-title">[Research Note Title]</h2>
+                            <div class="card-meta">
+                                <span class="card-category">Research Notes</span>
+                                <span class="card-date">Jan 15, 2025</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="blog/post-2.html" class="post-card" data-category="tutorials">
+                        <div class="card-image-wrapper">
+                            <div class="card-placeholder" style="background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="card-title">[Tutorial Title]</h2>
+                            <div class="card-meta">
+                                <span class="card-category">Tutorials</span>
+                                <span class="card-date">Dec 8, 2024</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="blog/post-3.html" class="post-card" data-category="thoughts">
+                        <div class="card-image-wrapper">
+                            <div class="card-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="card-title">[Thoughts Title]</h2>
+                            <div class="card-meta">
+                                <span class="card-category">Thoughts</span>
+                                <span class="card-date">Nov 20, 2024</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- List View -->
+                <div class="posts-list" id="postsList">
+                    <a href="blog/post-1.html" class="post-row" data-category="notes">
+                        <div class="row-meta">
+                            <span class="row-category">Research Notes</span>
+                            <span class="row-date">Jan 15, 2025</span>
+                        </div>
+                        <div class="row-content">
+                            <h2 class="row-title">[Research Note Title]</h2>
+                            <p class="row-excerpt">[Brief excerpt or description of what this note explores...]</p>
+                        </div>
+                    </a>
+
+                    <a href="blog/post-2.html" class="post-row" data-category="tutorials">
+                        <div class="row-meta">
+                            <span class="row-category">Tutorials</span>
+                            <span class="row-date">Dec 8, 2024</span>
+                        </div>
+                        <div class="row-content">
+                            <h2 class="row-title">[Tutorial Title]</h2>
+                            <p class="row-excerpt">[Brief excerpt or description...]</p>
+                        </div>
+                    </a>
+
+                    <a href="blog/post-3.html" class="post-row" data-category="thoughts">
+                        <div class="row-meta">
+                            <span class="row-category">Thoughts</span>
+                            <span class="row-date">Nov 20, 2024</span>
+                        </div>
+                        <div class="row-content">
+                            <h2 class="row-title">[Thoughts Title]</h2>
+                            <p class="row-excerpt">[Brief excerpt or description...]</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="copyright-footer">© Jaehyun Park</footer>
+
+    <script src="script.js"></script>
+    <script>
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const pageTitle = document.getElementById('pageTitle');
+        const postCards = document.querySelectorAll('.post-card');
+        const postRows = document.querySelectorAll('.post-row');
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const category = tab.dataset.category;
+                pageTitle.textContent = category === 'all' ? 'All' : tab.textContent;
+                postCards.forEach(card => {
+                    card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none';
+                });
+                postRows.forEach(row => {
+                    row.style.display = (category === 'all' || row.dataset.category === category) ? 'grid' : 'none';
+                });
+            });
+        });
+
+        const gridViewBtn = document.getElementById('gridViewBtn');
+        const listViewBtn = document.getElementById('listViewBtn');
+        const postsGrid = document.getElementById('postsGrid');
+        const postsList = document.getElementById('postsList');
+
+        gridViewBtn.addEventListener('click', () => {
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+            postsGrid.classList.remove('hidden');
+            postsList.classList.remove('active');
+        });
+
+        listViewBtn.addEventListener('click', () => {
+            listViewBtn.classList.add('active');
+            gridViewBtn.classList.remove('active');
+            postsGrid.classList.add('hidden');
+            postsList.classList.add('active');
+        });
+
+        const filterBtn = document.getElementById('filterBtn');
+        const filterMenu = document.getElementById('filterMenu');
+        const filterCancel = document.getElementById('filterCancel');
+        const sortBtn = document.getElementById('sortBtn');
+        const sortMenu = document.getElementById('sortMenu');
+
+        filterBtn.addEventListener('click', (e) => { e.stopPropagation(); filterMenu.classList.toggle('open'); sortMenu.classList.remove('open'); });
+        sortBtn.addEventListener('click', (e) => { e.stopPropagation(); sortMenu.classList.toggle('open'); filterMenu.classList.remove('open'); });
+        filterCancel.addEventListener('click', () => { filterMenu.classList.remove('open'); });
+        document.addEventListener('click', () => { filterMenu.classList.remove('open'); sortMenu.classList.remove('open'); });
+        filterMenu.addEventListener('click', (e) => e.stopPropagation());
+        sortMenu.addEventListener('click', (e) => e.stopPropagation());
+    </script>
+</body>
+</html>

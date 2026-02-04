@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMI | Jaehyun Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <a href="index.html" class="header-logo">Jaehyun Park</a>
+    </header>
+
+    <!-- Theme Toggle (Bottom Right) -->
+    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+    </button>
+
+    <div class="page-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="about.html" class="sidebar-link">About</a>
+                <a href="philosophy.html" class="sidebar-link">Philosophy</a>
+                <a href="blog.html" class="sidebar-link">Blog</a>
+                <a href="projects.html" class="sidebar-link">Projects</a>
+                <a href="publications.html" class="sidebar-link">Publications</a>
+                <a href="tmi.html" class="sidebar-link active">TMI</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                <article class="post-article">
+                    <header class="post-header">
+                        <p class="post-category">TMI</p>
+                        <h1 class="post-title">Things You Didn't Ask For</h1>
+                        <p class="post-subtitle">But here we are anyway</p>
+                    </header>
+
+                    <div class="post-content">
+                        <p class="post-lead">
+                            A collection of things you probably didn't need to know about me.
+                        </p>
+
+                        <h2>Documents</h2>
+                        <p>For faculty reviewing my application: materials that often go unread.</p>
+
+                        <div class="doc-grid">
+                            <a href="docs/sop.pdf" class="doc-card" target="_blank">
+                                <span class="doc-card-icon">&#128196;</span>
+                                <span class="doc-card-title">Statement of Purpose</span>
+                                <span class="doc-card-desc">My research interests and goals</span>
+                            </a>
+                            <a href="docs/transcript.pdf" class="doc-card" target="_blank">
+                                <span class="doc-card-icon">&#128203;</span>
+                                <span class="doc-card-title">Transcript</span>
+                                <span class="doc-card-desc">Academic record</span>
+                            </a>
+                            <a href="docs/cv.pdf" class="doc-card" target="_blank">
+                                <span class="doc-card-icon">&#128221;</span>
+                                <span class="doc-card-title">CV</span>
+                                <span class="doc-card-desc">Full curriculum vitae</span>
+                            </a>
+                            <a href="docs/coursework.pdf" class="doc-card" target="_blank">
+                                <span class="doc-card-icon">&#128218;</span>
+                                <span class="doc-card-title">Coursework</span>
+                                <span class="doc-card-desc">Selected major courses</span>
+                            </a>
+                        </div>
+
+                        <h2>Awards & Honors</h2>
+                        <ul>
+                            <li>Dean's List & Semester Honors, Purdue University (Fall 2025)</li>
+                            <li>Global Leadership Program Exchange Scholarship, SNU College of Engineering (Fall 2025)</li>
+                            <li>SNU DAAE Alumni Scholarship for Academic Excellence - Top 1 of the Department (Fall 2023)</li>
+                        </ul>
+
+                        <h2>Skills</h2>
+                        <p>
+                            <strong>Languages:</strong> English (Advanced), Korean (Native)<br>
+                            <strong>Programming:</strong> Matlab, Python, R, Julia, C/C++, LaTeX<br>
+                            <strong>Engineering:</strong> Midas, ETABS, Rhino, Grasshopper, AutoCAD
+                        </p>
+
+                        <h2>Extracurricular</h2>
+                        <ul>
+                            <li>Student Council - Digital communications and event design (2021)</li>
+                            <li>Society of Engineering Network and Service - STEM outreach programs (2023-2025)</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <footer class="copyright-footer">© Jaehyun Park</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

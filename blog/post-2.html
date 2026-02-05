@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Convex Optimization in Python | Jaehyun Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../list.css">
+    <link rel="stylesheet" href="../post.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-left">
+            <a href="../index.html" class="header-logo">Jaehyun Park</a>
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <span class="toggle-icon">&#9776;</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Theme Toggle (Bottom Right) -->
+    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+    </button>
+
+    <div class="page-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="../about.html" class="sidebar-link">About</a>
+                <a href="../philosophy.html" class="sidebar-link">Philosophy</a>
+                <a href="../blog.html" class="sidebar-link active">Blog</a>
+                <a href="../projects.html" class="sidebar-link">Projects</a>
+                <a href="../publications.html" class="sidebar-link">Publications</a>
+                <a href="../tmi.html" class="sidebar-link">TMI</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                <article class="post-article">
+                    <header class="post-header">
+                        <p class="post-category">Tutorials</p>
+                        <h1 class="post-title">Getting Started with Convex Optimization in Python</h1>
+                        <p class="post-subtitle">A practical guide to CVXPY and disciplined convex programming</p>
+                    </header>
+
+                    <div class="post-content">
+                        <p class="post-lead">
+                            Convex optimization is a powerful tool for solving a wide range of problems in engineering,
+                            finance, and machine learning. This tutorial introduces CVXPY, a Python library that makes
+                            convex optimization accessible and intuitive.
+                        </p>
+
+                        <h2>Why Convex Optimization?</h2>
+                        <p>
+                            Unlike general nonlinear optimization, convex problems have a beautiful property: any local
+                            minimum is also a global minimum. This means we can solve them efficiently and reliably,
+                            even for large-scale problems with thousands of variables.
+                        </p>
+                        <p>
+                            Many practical problems can be formulated as convex programs, including portfolio optimization,
+                            signal processing, control systems design, and regularized regression.
+                        </p>
+
+                        <h2>Setting Up CVXPY</h2>
+                        <p>
+                            Installation is straightforward with pip. CVXPY provides a natural syntax for specifying
+                            optimization problems that closely mirrors mathematical notation.
+                        </p>
+                        <p>
+                            The library automatically checks whether your problem is convex using disciplined convex
+                            programming (DCP) rules, alerting you if you accidentally specify a non-convex problem.
+                        </p>
+
+                        <h2>Your First Optimization Problem</h2>
+                        <p>
+                            Let's start with a simple least squares problem. We want to find a vector x that minimizes
+                            the squared Euclidean norm of Ax - b, where A is a matrix and b is a vector.
+                        </p>
+                        <p>
+                            CVXPY allows us to express this naturally: we define a variable, construct an objective
+                            function, and call solve(). The library handles the rest, selecting an appropriate solver
+                            and returning the optimal solution.
+                        </p>
+
+                        <h2>Adding Constraints</h2>
+                        <p>
+                            Real-world problems often have constraints. CVXPY supports a rich set of constraint types:
+                        </p>
+                        <ul>
+                            <li>Linear equality and inequality constraints</li>
+                            <li>Second-order cone constraints</li>
+                            <li>Semidefinite constraints</li>
+                            <li>Exponential cone constraints</li>
+                        </ul>
+
+                        <h2>Advanced Topics</h2>
+                        <p>
+                            Once comfortable with basics, explore parametric optimization, warm starting for faster
+                            solves, and custom solver options. CVXPY also integrates well with NumPy and can handle
+                            sparse matrices for large-scale problems.
+                        </p>
+
+                        <h2>Next Steps</h2>
+                        <p>
+                            I recommend working through the examples on the CVXPY website and reading Boyd and
+                            Vandenberghe's textbook for theoretical foundations. Practice by formulating problems
+                            from your own domain as convex programs.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <footer class="copyright-footer">© Jaehyun Park</footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

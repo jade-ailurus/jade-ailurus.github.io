@@ -18,6 +18,12 @@
     border-bottom: 1px solid transparent;
 }
 
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .header-logo {
     font-family: var(--font-main);
     font-size: 1.25rem;
@@ -28,6 +34,30 @@
 
 .header-logo:hover {
     opacity: 0.7;
+}
+
+.sidebar-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid var(--line-color);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+}
+
+.toggle-icon {
+    font-size: 14px;
+    line-height: 1;
 }
 
 .header-right {
@@ -72,13 +102,14 @@
     left: 0;
     top: 60px;
     bottom: 0;
-    width: 12.5%;
-    padding: 7.5rem 1.5rem 2rem 2rem;
+    width: 15%;
+    padding: 11rem 1.5rem 2rem 2rem;
     background: var(--bg-primary);
     display: flex;
     flex-direction: column;
     z-index: 50;
     box-sizing: border-box;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .sidebar-nav {
@@ -122,13 +153,32 @@
 /* Main Content */
 .main-content {
     flex: 1;
-    margin-left: 12.5%;
+    margin-left: 15%;
     padding: 2rem 0 3rem;
+    transition: margin-left 0.3s ease;
 }
 
 .content-container {
-    width: 62.5%;
-    margin: 0 12.5%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: 20%;
+    transition: width 0.3s ease, margin 0.3s ease;
+}
+
+/* Sidebar collapsed state */
+.sidebar-collapsed .sidebar {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar-collapsed .main-content {
+    margin-left: 0;
+}
+
+.sidebar-collapsed .content-container {
+    width: 60%;
+    margin: 0 auto;
 }
 
 /* Page Title */
@@ -275,6 +325,9 @@
 .filter-option input[type="checkbox"] {
     width: 16px;
     height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    flex-shrink: 0;
     accent-color: var(--text-primary);
 }
 
@@ -537,7 +590,7 @@
 @media (max-width: 1400px) {
     .content-container {
         width: 70%;
-        margin-left: 8%;
+        margin: 0 auto;
     }
 }
 
@@ -548,7 +601,7 @@
 
     .content-container {
         width: 80%;
-        margin-left: 5%;
+        margin: 0 auto;
     }
 }
 

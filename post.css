@@ -10,6 +10,124 @@
     padding: 0;
 }
 
+/* Sticky Table of Contents */
+.sticky-toc {
+    position: fixed;
+    top: 60px;
+    left: 15%;
+    right: 0;
+    background: var(--bg-primary);
+    z-index: 90;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease, left 0.3s ease;
+    pointer-events: none;
+}
+
+.sidebar-collapsed .sticky-toc {
+    left: 0;
+}
+
+.sticky-toc.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.toc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 2rem;
+    border-bottom: 1px solid var(--line-color);
+}
+
+.sticky-toc.expanded .toc-header {
+    border-bottom: none;
+}
+
+.toc-current {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 450;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.toc-expand-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: 1px solid var(--line-color);
+    border-radius: 6px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.toc-expand-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+}
+
+.toc-expand-btn svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+}
+
+.sticky-toc.expanded .toc-expand-btn svg {
+    transform: rotate(180deg);
+}
+
+.toc-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0 2rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.2s ease;
+}
+
+.sticky-toc.expanded .toc-links {
+    max-height: 500px;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    opacity: 1;
+    border-bottom: 1px solid var(--line-color);
+}
+
+.toc-link {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.4rem 0;
+    transition: color 0.2s ease;
+}
+
+.toc-link:hover {
+    color: var(--text-primary);
+}
+
+.toc-link.active {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .sticky-toc {
+        left: 0;
+    }
+}
+
 .post-header {
     margin: 0 0 2rem 0;
     padding: 0;

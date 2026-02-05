@@ -14,7 +14,7 @@
             display: flex;
             justify-content: space-between;
             align-items: stretch;
-            gap: 2rem;
+            gap: 3rem;
             min-height: calc(100vh - 60px - 6rem);
             padding-top: 4rem;
         }
@@ -33,7 +33,7 @@
 
         .home-name {
             font-family: var(--font-main);
-            font-size: 3rem;
+            font-size: 3.1rem;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 0.8rem;
@@ -52,7 +52,7 @@
 
         .home-welcome {
             font-family: var(--font-main);
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             font-weight: 500;
             color: var(--text-primary);
         }
@@ -157,7 +157,12 @@
 <body>
     <!-- Top Header -->
     <header class="top-header">
-        <a href="index.html" class="header-logo">Jaehyun Park</a>
+        <div class="header-left">
+            <a href="index.html" class="header-logo">Jaehyun Park</a>
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <span class="toggle-icon">&#9776;</span>
+            </button>
+        </div>
     </header>
 
     <!-- Theme Toggle (Bottom Right) -->
@@ -193,7 +198,7 @@
                             <p class="home-welcome">Welcome to my website!</p>
                         </div>
                         <div class="home-logo">
-                            <a href="https://www.snu.ac.kr" target="_blank">
+                            <a href="https://en.snu.ac.kr/index.html" target="_blank">
                                 <img src="images/snu_logo.png" alt="Seoul National University">
                             </a>
                             <span class="home-logo-text">Current affiliation</span>

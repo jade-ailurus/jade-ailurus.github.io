@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Gradient Flow in Deep Networks | Jaehyun Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../list.css">
+    <link rel="stylesheet" href="../post.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-left">
+            <a href="../index.html" class="header-logo">Jaehyun Park</a>
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <span class="toggle-icon">&#9776;</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Theme Toggle (Bottom Right) -->
+    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+    </button>
+
+    <div class="page-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="../about.html" class="sidebar-link">About</a>
+                <a href="../philosophy.html" class="sidebar-link">Philosophy</a>
+                <a href="../blog.html" class="sidebar-link active">Blog</a>
+                <a href="../projects.html" class="sidebar-link">Projects</a>
+                <a href="../publications.html" class="sidebar-link">Publications</a>
+                <a href="../tmi.html" class="sidebar-link">TMI</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                <article class="post-article">
+                    <header class="post-header">
+                        <p class="post-category">Research Notes</p>
+                        <h1 class="post-title">Understanding Gradient Flow in Deep Networks</h1>
+                        <p class="post-subtitle">A deep dive into backpropagation dynamics and vanishing gradients</p>
+                    </header>
+
+                    <div class="post-content">
+                        <p class="post-lead">
+                            In this note, I explore the mathematical foundations of gradient flow in deep neural networks,
+                            examining why certain architectures struggle with training and how modern techniques address these challenges.
+                        </p>
+
+                        <h2>Introduction</h2>
+                        <p>
+                            Training deep neural networks has long been a challenging endeavor. The fundamental issue lies in
+                            how gradients propagate through many layers during backpropagation. When networks become sufficiently
+                            deep, gradients can either vanish to negligibly small values or explode to unmanageably large ones.
+                        </p>
+                        <p>
+                            This phenomenon was first rigorously analyzed by Hochreiter in 1991 and later by Bengio et al. in 1994.
+                            Their work established the theoretical framework for understanding why vanilla RNNs fail to capture
+                            long-range dependencies.
+                        </p>
+
+                        <h2>Mathematical Framework</h2>
+                        <p>
+                            Consider a deep network with L layers. The gradient of the loss with respect to parameters in layer l
+                            involves a product of Jacobian matrices. Specifically, if we denote the activation at layer k as h_k,
+                            the gradient flow can be expressed as a chain of matrix multiplications.
+                        </p>
+                        <p>
+                            The key insight is that if the spectral norm of these Jacobians is consistently less than 1,
+                            the product will exponentially decay. Conversely, if greater than 1, it will exponentially grow.
+                            This creates a delicate balancing act in network initialization and architecture design.
+                        </p>
+
+                        <h2>Modern Solutions</h2>
+                        <p>
+                            Several architectural innovations have emerged to address gradient flow issues:
+                        </p>
+                        <ul>
+                            <li>Residual connections (ResNet) that provide gradient highways</li>
+                            <li>Batch normalization that stabilizes activation distributions</li>
+                            <li>Careful initialization schemes like Xavier and He initialization</li>
+                            <li>Gating mechanisms in LSTMs and GRUs</li>
+                        </ul>
+
+                        <h2>Implications for Optimization</h2>
+                        <p>
+                            Understanding gradient flow has profound implications for optimization algorithm design.
+                            Adaptive methods like Adam implicitly handle some gradient scaling issues, but architectural
+                            choices remain paramount for trainability.
+                        </p>
+
+                        <h2>Conclusion</h2>
+                        <p>
+                            The study of gradient flow continues to inform modern deep learning research. As we push
+                            towards ever-deeper and more complex architectures, these foundational insights remain
+                            crucial for developing trainable models.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <footer class="copyright-footer">© Jaehyun Park</footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

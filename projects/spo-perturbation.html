@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perturbation Analysis on Pre-trained SPO Framework | Jaehyun Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../list.css">
+    <link rel="stylesheet" href="../post.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-left">
+            <a href="../index.html" class="header-logo">Jaehyun Park</a>
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <span class="toggle-icon">&#9776;</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Theme Toggle (Bottom Right) -->
+    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+    </button>
+
+    <div class="page-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="../about.html" class="sidebar-link">About</a>
+                <a href="../philosophy.html" class="sidebar-link">Philosophy</a>
+                <a href="../blog.html" class="sidebar-link">Blog</a>
+                <a href="../projects.html" class="sidebar-link active">Projects</a>
+                <a href="../publications.html" class="sidebar-link">Publications</a>
+                <a href="../tmi.html" class="sidebar-link">TMI</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                <article class="post-article">
+                    <header class="post-header">
+                        <p class="post-category">Optimization</p>
+                        <h1 class="post-title">Perturbation Analysis on Pre-trained SPO Framework</h1>
+                        <p class="post-subtitle">Establishing robust decision-making under distributional uncertainty</p>
+                    </header>
+
+                    <div class="post-content">
+                        <p class="post-lead">
+                            This project investigates the robustness of Smart Predict-then-Optimize (SPO) frameworks
+                            when subjected to perturbations in input data. We develop a two-stage training approach
+                            combined with distributionally robust optimization (DRO) to establish theoretical guarantees.
+                        </p>
+
+                        <h2>Motivation</h2>
+                        <p>
+                            The SPO framework bridges machine learning predictions with downstream optimization decisions.
+                            However, real-world applications face inevitable data perturbations—measurement noise,
+                            distribution shift, or adversarial manipulation. Understanding how these perturbations
+                            affect decision quality is crucial for deployment in critical systems.
+                        </p>
+                        <p>
+                            Traditional approaches treat prediction and optimization separately, missing opportunities
+                            for end-to-end robustness. Our work addresses this gap by analyzing perturbation effects
+                            throughout the entire pipeline.
+                        </p>
+
+                        <h2>Methodology</h2>
+                        <p>
+                            We propose a two-stage training procedure:
+                        </p>
+                        <ul>
+                            <li><strong>Pre-training:</strong> Train a prediction model using standard SGD with traditional loss functions (MSE, cross-entropy)</li>
+                            <li><strong>Fine-tuning:</strong> Adapt the model using SPO+ loss, which directly measures decision quality</li>
+                        </ul>
+                        <p>
+                            This approach combines the stability of traditional training with the decision-awareness
+                            of SPO methods. We then analyze robustness using tools from distributionally robust optimization.
+                        </p>
+
+                        <h2>Theoretical Contributions</h2>
+                        <p>
+                            Our main theoretical results include:
+                        </p>
+                        <ul>
+                            <li>Tight bounds on decision regret under bounded perturbations</li>
+                            <li>Characterization of the robustness-accuracy tradeoff</li>
+                            <li>Conditions under which the two-stage approach provably outperforms end-to-end training</li>
+                        </ul>
+
+                        <h2>Experimental Results</h2>
+                        <p>
+                            We validate our approach on several benchmark problems including shortest path prediction,
+                            portfolio optimization, and resource allocation. Results demonstrate significant improvements
+                            in worst-case performance while maintaining competitive average-case accuracy.
+                        </p>
+
+                        <h2>Ongoing Work</h2>
+                        <p>
+                            Current extensions include handling non-convex optimization problems, developing
+                            computationally efficient robustness certificates, and applications to real-world
+                            supply chain optimization scenarios.
+                        </p>
+
+                        <h2>Collaborators</h2>
+                        <p>
+                            This work is conducted under the supervision of Prof. Taewoo Lee at the Operations
+                            Management Lab, SNU Business School.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <footer class="copyright-footer">© Jaehyun Park</footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

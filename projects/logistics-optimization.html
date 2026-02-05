@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizing Operation Costs for Logistics Centers | Jaehyun Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../list.css">
+    <link rel="stylesheet" href="../post.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-left">
+            <a href="../index.html" class="header-logo">Jaehyun Park</a>
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <span class="toggle-icon">&#9776;</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Theme Toggle (Bottom Right) -->
+    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">◐</span>
+    </button>
+
+    <div class="page-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="../about.html" class="sidebar-link">About</a>
+                <a href="../philosophy.html" class="sidebar-link">Philosophy</a>
+                <a href="../blog.html" class="sidebar-link">Blog</a>
+                <a href="../projects.html" class="sidebar-link active">Projects</a>
+                <a href="../publications.html" class="sidebar-link">Publications</a>
+                <a href="../tmi.html" class="sidebar-link">TMI</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-container">
+                <article class="post-article">
+                    <header class="post-header">
+                        <p class="post-category">Operations Research</p>
+                        <h1 class="post-title">Optimizing Operation Costs for Logistics Centers</h1>
+                        <p class="post-subtitle">Integrated approach to vehicle routing and energy optimization in Seoul</p>
+                    </header>
+
+                    <div class="post-content">
+                        <p class="post-lead">
+                            This project addresses the operational challenges faced by urban logistics centers,
+                            combining vehicle routing optimization with renewable energy installation planning
+                            to minimize total operational costs.
+                        </p>
+
+                        <h2>Problem Context</h2>
+                        <p>
+                            Last-mile delivery in dense urban environments like Seoul presents unique challenges.
+                            Logistics centers must balance delivery efficiency, vehicle utilization, and increasingly,
+                            energy costs. With rising electricity prices and growing environmental concerns,
+                            integrating renewable energy sources becomes economically attractive.
+                        </p>
+                        <p>
+                            We partnered with a logistics company operating multiple distribution centers in the
+                            Seoul metropolitan area to develop an integrated optimization framework.
+                        </p>
+
+                        <h2>Demand Simulation</h2>
+                        <p>
+                            Using historical delivery data and demographic information, we built a stochastic demand
+                            model for the Seoul region. Key features include:
+                        </p>
+                        <ul>
+                            <li>Spatial clustering of delivery points by district</li>
+                            <li>Temporal patterns capturing daily and weekly seasonality</li>
+                            <li>Correlation structure between nearby regions</li>
+                        </ul>
+                        <p>
+                            This model generates realistic demand scenarios for testing our optimization approaches.
+                        </p>
+
+                        <h2>Vehicle Routing</h2>
+                        <p>
+                            We formulated and solved Vehicle Routing Problems (VRP) and Traveling Salesman Problems (TSP)
+                            using Gurobi optimizer. Road network data from OpenStreetMap, processed with OSMnx,
+                            provides realistic travel times accounting for Seoul's complex urban geography.
+                        </p>
+                        <p>
+                            Our formulation includes capacity constraints, time windows for commercial deliveries,
+                            and driver working hour regulations.
+                        </p>
+
+                        <h2>Energy Optimization</h2>
+                        <p>
+                            For each logistics center, we optimize the installation of photovoltaic (PV) panels
+                            considering:
+                        </p>
+                        <ul>
+                            <li>Roof space availability and orientation</li>
+                            <li>Local solar irradiance patterns</li>
+                            <li>Time-of-use electricity pricing</li>
+                            <li>Installation and maintenance costs</li>
+                            <li>Government incentives and feed-in tariffs</li>
+                        </ul>
+
+                        <h2>Results</h2>
+                        <p>
+                            Our integrated approach achieved 12% reduction in total operational costs compared to
+                            the baseline. Vehicle routing improvements contributed 7%, while optimal PV installation
+                            provided an additional 5% through energy cost savings.
+                        </p>
+                        <p>
+                            The solution has been partially implemented at two pilot centers, with full rollout
+                            planned for 2025.
+                        </p>
+
+                        <h2>Technical Stack</h2>
+                        <p>
+                            Python (NumPy, Pandas), Gurobi Optimizer, OSMnx, PVLIB for solar modeling,
+                            and custom visualization tools for route planning.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <footer class="copyright-footer">© Jaehyun Park</footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

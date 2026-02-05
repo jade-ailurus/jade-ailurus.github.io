@@ -39,7 +39,7 @@ function getDailyColor() {
 
     return {
         gradient: `linear-gradient(135deg, ${color1} 0%, ${color2} 50%, ${color3} 100%)`,
-        date: `${year}.${String(month).padStart(2, '0')}.${String(day).padStart(2, '0')}`,
+        date: `${String(month).padStart(2, '0')}.${String(day).padStart(2, '0')}.${year}`,
         seed: seed
     };
 }
@@ -51,13 +51,144 @@ function applyDailyColor() {
     if (colorBox && colorNote) {
         const daily = getDailyColor();
         colorBox.style.background = daily.gradient;
-        colorNote.innerHTML = `// color = dailyGradient(seed=${daily.seed})<br>// generated @ NYC ${daily.date}<br>// have a nice day :)`;
+        colorNote.innerHTML = `// color = dailyGradient(seed=${daily.seed})<br>// refreshes every midnight (US EST)<br>// may today's color bring you luck :)`;
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     // Apply daily color
     applyDailyColor();
+
+    // ========================================
+    // Sidebar Toggle
+    // ========================================
+    const sidebarToggle = document.getElementById('sidebarToggle');
+
+    if (sidebarToggle) {
+        // Check saved sidebar state
+        const savedSidebarState = localStorage.getItem('sidebarCollapsed');
+        if (savedSidebarState === 'true') {
+            document.body.classList.add('sidebar-collapsed');
+        }
+
+        sidebarToggle.addEventListener('click', () => {
+            document.body.classList.toggle('sidebar-collapsed');
+            const isCollapsed = document.body.classList.contains('sidebar-collapsed');
+            localStorage.setItem('sidebarCollapsed', isCollapsed);
+        });
+    }
+
+    // ========================================
+    // Sticky Table of Contents (for post pages)
+    // ========================================
+    const postContent = document.querySelector('.post-content');
+    const postHeader = document.querySelector('.post-header');
+
+    if (postContent && postHeader) {
+        const headings = postContent.querySelectorAll('h2');
+
+        if (headings.length > 0) {
+            // Create sticky TOC element
+            const stickyToc = document.createElement('nav');
+            stickyToc.className = 'sticky-toc';
+
+            // Create header row (current section + button)
+            const tocHeader = document.createElement('div');
+            tocHeader.className = 'toc-header';
+
+            // Create current section display
+            const tocCurrent = document.createElement('span');
+            tocCurrent.className = 'toc-current';
+            tocCurrent.textContent = headings[0].textContent;
+            tocHeader.appendChild(tocCurrent);
+
+            // Create expand button
+            const expandBtn = document.createElement('button');
+            expandBtn.className = 'toc-expand-btn';
+            expandBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
+            expandBtn.addEventListener('click', () => {
+                stickyToc.classList.toggle('expanded');
+            });
+            tocHeader.appendChild(expandBtn);
+
+            stickyToc.appendChild(tocHeader);
+
+            // Create links container
+            const tocLinks = document.createElement('div');
+            tocLinks.className = 'toc-links';
+
+            // Add IDs to headings and create TOC links
+            headings.forEach((heading, index) => {
+                const id = `section-${index}`;
+                heading.id = id;
+
+                const link = document.createElement('a');
+                link.href = `#${id}`;
+                link.className = 'toc-link';
+                link.textContent = heading.textContent;
+
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    stickyToc.classList.remove('expanded');
+                    const yOffset = -120;
+                    const y = heading.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                });
+
+                tocLinks.appendChild(link);
+            });
+
+            stickyToc.appendChild(tocLinks);
+
+            // Insert TOC into body (fixed position)
+            document.body.appendChild(stickyToc);
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!stickyToc.contains(e.target)) {
+                    stickyToc.classList.remove('expanded');
+                }
+            });
+
+            // Show/hide TOC based on first h2 position
+            const firstHeading = headings[0];
+
+            function updateTocVisibility() {
+                const firstHeadingTop = firstHeading.getBoundingClientRect().top;
+
+                // Show TOC when first h2 reaches top of viewport
+                if (firstHeadingTop < 80) {
+                    stickyToc.classList.add('visible');
+                } else {
+                    stickyToc.classList.remove('visible');
+                    stickyToc.classList.remove('expanded');
+                }
+
+                // Update current section and active link
+                let currentSection = null;
+                let currentHeadingText = headings[0].textContent;
+
+                headings.forEach((heading) => {
+                    const rect = heading.getBoundingClientRect();
+                    if (rect.top <= 150) {
+                        currentSection = heading.id;
+                        currentHeadingText = heading.textContent;
+                    }
+                });
+
+                // Update current section display
+                tocCurrent.textContent = currentHeadingText;
+
+                // Update active link in dropdown
+                tocLinks.querySelectorAll('.toc-link').forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${currentSection}`);
+                });
+            }
+
+            window.addEventListener('scroll', updateTocVisibility);
+            updateTocVisibility();
+        }
+    }
     const hexWrapper = document.querySelector('.hex-wrapper');
     const vertices = document.querySelectorAll('.vertex');
 

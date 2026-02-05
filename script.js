@@ -63,18 +63,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sidebar Toggle
     // ========================================
     const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.querySelector('.sidebar');
 
     if (sidebarToggle) {
-        // Check saved sidebar state
+        // Check if mobile
+        const isMobile = () => window.innerWidth <= 900;
+
+        // Check saved sidebar state (desktop only)
         const savedSidebarState = localStorage.getItem('sidebarCollapsed');
-        if (savedSidebarState === 'true') {
+        if (savedSidebarState === 'true' && !isMobile()) {
             document.body.classList.add('sidebar-collapsed');
         }
 
         sidebarToggle.addEventListener('click', () => {
-            document.body.classList.toggle('sidebar-collapsed');
-            const isCollapsed = document.body.classList.contains('sidebar-collapsed');
-            localStorage.setItem('sidebarCollapsed', isCollapsed);
+            if (isMobile()) {
+                // Mobile: toggle full-screen overlay
+                document.body.classList.toggle('sidebar-open');
+            } else {
+                // Desktop: collapse/expand sidebar
+                document.body.classList.toggle('sidebar-collapsed');
+                const isCollapsed = document.body.classList.contains('sidebar-collapsed');
+                localStorage.setItem('sidebarCollapsed', isCollapsed);
+            }
+        });
+
+        // Close mobile sidebar when clicking a link
+        if (sidebar) {
+            sidebar.querySelectorAll('.sidebar-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (isMobile()) {
+                        document.body.classList.remove('sidebar-open');
+                    }
+                });
+            });
+        }
+
+        // Close mobile sidebar when resizing to desktop
+        window.addEventListener('resize', () => {
+            if (!isMobile()) {
+                document.body.classList.remove('sidebar-open');
+            }
         });
     }
 

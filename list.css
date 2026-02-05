@@ -26,8 +26,8 @@
 
 .header-logo {
     font-family: var(--font-main);
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 450;
     color: var(--text-primary);
     text-decoration: none;
 }
@@ -120,7 +120,7 @@
 
 .sidebar-link {
     font-family: var(--font-main);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 300;
     color: #4a4a4f;
     text-decoration: none;
@@ -129,12 +129,12 @@
 }
 
 [data-theme="dark"] .sidebar-link {
-    color: #a0a0a5;
+    color: #b8b8bd;
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .sidebar-link {
-        color: #a0a0a5;
+        color: #b8b8bd;
     }
 }
 
@@ -144,8 +144,7 @@
 
 .sidebar-link.active {
     color: var(--text-primary);
-    font-weight: 450;
-    font-size: 1.1rem;
+    font-weight: 400;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
@@ -211,7 +210,7 @@
 
 .category-tab {
     font-family: var(--font-main);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 300;
     color: var(--text-secondary);
     text-decoration: none;
@@ -244,7 +243,7 @@
     align-items: center;
     gap: 0.4rem;
     font-family: var(--font-main);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 300;
     color: var(--text-secondary);
     cursor: pointer;
@@ -306,7 +305,7 @@
 
 .filter-column h4 {
     font-family: var(--font-main);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 400;
     color: var(--text-secondary);
     margin-bottom: 0.75rem;
@@ -350,7 +349,7 @@
 
 .filter-cancel {
     font-family: var(--font-main);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 300;
     color: var(--text-secondary);
     background: none;
@@ -465,8 +464,8 @@
     justify-content: center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 450;
 }
 
 .card-content {
@@ -487,7 +486,7 @@
     align-items: center;
     gap: 0.75rem;
     font-family: var(--font-main);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 300;
 }
 
@@ -547,7 +546,7 @@
 
 .row-date {
     font-family: var(--font-main);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 300;
     color: var(--text-secondary);
 }
@@ -560,7 +559,7 @@
 
 .row-title {
     font-family: var(--font-main);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 450;
     color: var(--text-primary);
     line-height: 1.4;
@@ -569,7 +568,7 @@
 
 .row-excerpt {
     font-family: var(--font-main);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 300;
     color: var(--text-secondary);
     line-height: 1.6;
@@ -639,10 +638,6 @@
         padding: 0.75rem 0;
     }
 
-    .sidebar-link.active {
-        font-size: 1.6rem;
-    }
-
     .main-content {
         margin-left: 0;
         padding: 2rem 1.5rem;
@@ -669,8 +664,40 @@
     }
 
     .category-tabs {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        width: 100%;
+    }
+
+    .right-controls {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .dropdown-container {
+        position: static;
+    }
+
+    .dropdown-menu {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 16px 16px 0 0;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .filter-menu {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .sort-menu {
+        min-width: unset;
         width: 100%;
     }
 
@@ -685,7 +712,7 @@
     }
 
     .filter-menu.open {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 

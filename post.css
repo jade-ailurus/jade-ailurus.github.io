@@ -48,7 +48,7 @@
 
 .toc-current {
     font-family: var(--font-main);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 450;
     color: var(--text-primary);
     white-space: nowrap;
@@ -105,7 +105,7 @@
 
 .toc-link {
     font-family: var(--font-main);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 300;
     color: var(--text-secondary);
     text-decoration: none;
@@ -119,7 +119,7 @@
 
 .toc-link.active {
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 450;
 }
 
 @media (max-width: 900px) {
@@ -150,7 +150,7 @@
 
 .post-subtitle {
     font-family: var(--font-main);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 300;
     color: var(--text-primary);
     line-height: 1.5;
@@ -167,7 +167,7 @@
 }
 
 .post-content h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 450;
     color: var(--text-primary);
     margin: 3rem 0 1rem;
@@ -175,7 +175,7 @@
 }
 
 .post-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 450;
     color: var(--text-primary);
     margin: 2rem 0 0.75rem;
@@ -207,7 +207,7 @@
 }
 
 .post-lead {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 300;
     line-height: 1.7;
     color: var(--text-primary);
@@ -237,14 +237,14 @@
 }
 
 .contact-label {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     font-weight: 300;
     color: var(--text-primary);
     margin-bottom: 0.25rem;
 }
 
 .contact-value {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: var(--text-primary);
     font-weight: 400;
 }
@@ -279,14 +279,14 @@
 }
 
 .doc-card-title {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     font-weight: 400;
     color: var(--text-primary);
     margin-bottom: 0.25rem;
 }
 
 .doc-card-desc {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     font-weight: 300;
     color: var(--text-primary);
 }
@@ -303,13 +303,13 @@
 
 .publication-item h3 {
     margin-top: 0;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 450;
     color: var(--text-primary);
 }
 
 .pub-meta {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 300;
     color: var(--text-primary);
     margin-bottom: 1rem;
@@ -324,7 +324,7 @@
 }
 
 .pub-links {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     margin-top: 1rem;
 }
 
@@ -362,15 +362,7 @@
         font-size: 2rem;
     }
 
-    .post-subtitle {
-        font-size: 1.1rem;
-    }
-
     .post-content {
         font-size: 1rem;
-    }
-
-    .post-lead {
-        font-size: 1.1rem;
     }
 }

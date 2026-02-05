@@ -198,28 +198,107 @@
     <script>
         const categoryTabs = document.querySelectorAll('.category-tab');
         const pageTitle = document.getElementById('pageTitle');
-        const postCards = document.querySelectorAll('.post-card');
-        const postRows = document.querySelectorAll('.post-row');
+        const postsGrid = document.getElementById('postsGrid');
+        const postsList = document.getElementById('postsList');
 
+        // Parse date from text like "Nov 2025" or "2024"
+        function parseDate(dateStr) {
+            // Handle "ongoing" as future date
+            if (dateStr.toLowerCase().includes('ongoing')) return new Date('2099-01-01');
+            return new Date(dateStr);
+        }
+
+        // Get current active category
+        function getActiveCategory() {
+            const activeTab = document.querySelector('.category-tab.active');
+            return activeTab ? activeTab.dataset.category : 'all';
+        }
+
+        // Get current filter settings
+        function getFilters() {
+            const topics = [];
+            const years = [];
+            document.querySelectorAll('#filterMenu input[type="checkbox"]:checked').forEach(cb => {
+                if (cb.id.startsWith('topic-')) topics.push(cb.value);
+                if (cb.id.startsWith('year-')) years.push(cb.value);
+            });
+            return { topics, years };
+        }
+
+        // Get current sort order
+        function getSortOrder() {
+            const checked = document.querySelector('input[name="sort"]:checked');
+            return checked ? checked.value : 'newest';
+        }
+
+        // Apply all filters and sorting
+        function applyFiltersAndSort() {
+            const category = getActiveCategory();
+            const { topics, years } = getFilters();
+            const sortOrder = getSortOrder();
+
+            const cards = Array.from(postsGrid.querySelectorAll('.post-card'));
+            const rows = Array.from(postsList.querySelectorAll('.post-row'));
+
+            // Filter function
+            function shouldShow(el) {
+                const elCategory = el.dataset.category;
+                const dateText = el.querySelector('.card-date, .row-date')?.textContent || '';
+                const year = dateText.match(/\d{4}/)?.[0] || '';
+                const isOngoing = dateText.toLowerCase().includes('ongoing');
+
+                // Category filter (from tabs)
+                if (category !== 'all' && elCategory !== category) return false;
+
+                // Topic filter (from checkboxes)
+                if (topics.length > 0 && !topics.includes(elCategory)) return false;
+
+                // Year filter
+                if (years.length > 0) {
+                    const matchesYear = years.includes(year) || (years.includes('ongoing') && isOngoing);
+                    if (!matchesYear) return false;
+                }
+
+                return true;
+            }
+
+            // Sort function
+            function sortByDate(a, b) {
+                const dateA = parseDate(a.querySelector('.card-date, .row-date')?.textContent || '');
+                const dateB = parseDate(b.querySelector('.card-date, .row-date')?.textContent || '');
+                return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
+            }
+
+            // Sort cards and rows
+            cards.sort(sortByDate);
+            rows.sort(sortByDate);
+
+            // Re-append in sorted order and apply visibility
+            cards.forEach(card => {
+                postsGrid.appendChild(card);
+                card.style.display = shouldShow(card) ? 'block' : 'none';
+            });
+
+            rows.forEach(row => {
+                postsList.appendChild(row);
+                row.style.display = shouldShow(row) ? 'grid' : 'none';
+            });
+        }
+
+        // Category tabs
         categoryTabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 categoryTabs.forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
                 const category = tab.dataset.category;
                 pageTitle.textContent = category === 'all' ? 'All' : tab.textContent;
-                postCards.forEach(card => {
-                    card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none';
-                });
-                postRows.forEach(row => {
-                    row.style.display = (category === 'all' || row.dataset.category === category) ? 'grid' : 'none';
-                });
+                applyFiltersAndSort();
             });
         });
 
+        // View toggle
         const gridViewBtn = document.getElementById('gridViewBtn');
         const listViewBtn = document.getElementById('listViewBtn');
-        const postsGrid = document.getElementById('postsGrid');
-        const postsList = document.getElementById('postsList');
 
         gridViewBtn.addEventListener('click', () => {
             gridViewBtn.classList.add('active');
@@ -235,6 +314,7 @@
             postsList.classList.add('active');
         });
 
+        // Dropdown controls
         const filterBtn = document.getElementById('filterBtn');
         const filterMenu = document.getElementById('filterMenu');
         const filterCancel = document.getElementById('filterCancel');
@@ -247,6 +327,22 @@
         document.addEventListener('click', () => { filterMenu.classList.remove('open'); sortMenu.classList.remove('open'); });
         filterMenu.addEventListener('click', (e) => e.stopPropagation());
         sortMenu.addEventListener('click', (e) => e.stopPropagation());
+
+        // Sort radio buttons
+        document.querySelectorAll('input[name="sort"]').forEach(radio => {
+            radio.addEventListener('change', () => {
+                applyFiltersAndSort();
+                sortMenu.classList.remove('open');
+            });
+        });
+
+        // Filter checkboxes
+        document.querySelectorAll('#filterMenu input[type="checkbox"]').forEach(cb => {
+            cb.addEventListener('change', applyFiltersAndSort);
+        });
+
+        // Initial sort on page load
+        applyFiltersAndSort();
     </script>
 </body>
 </html>

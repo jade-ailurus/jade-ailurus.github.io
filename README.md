@@ -16,8 +16,8 @@ and contact information on one page.
 - `academic.css`: shared typography and colors for supporting pages.
 - `docs/cv.pdf`: the public CV.
 - `projects/`: concise project details.
-- `letters/academic-journey.html`: "How My Research Interests Evolved", linked
-  from the introduction's research-proposal link and Posts.
+- `letters/academic-journey.html`: "Designing My Academic Path: Mathematical Modeling for Complex Systems", linked
+  from the introduction's academic-journey link and Posts.
 - `blog/post-1.html` and `blog/post-2.html`: posts with a TBD body, using the
   same template as the academic-journey essay.
 - `blog.html`, `blog/`, `philosophy.html`, and `philosophy/`: retained supporting

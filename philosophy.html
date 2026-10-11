@@ -4,38 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philosophy | Jaehyun Park</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="academic.css">
 </head>
 <body>
     <!-- Top Header -->
     <header class="top-header">
         <div class="header-left">
-            <a href="index.html" class="header-logo">Jaehyun Park</a>
+            <a href="index.html#about" class="header-logo">Jaehyun Park</a>
             <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
                 <span class="toggle-icon">&#9776;</span>
             </button>
         </div>
     </header>
 
-    <!-- Theme Toggle (Bottom Right) -->
-    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
-        <span class="theme-icon">◐</span>
-    </button>
-
     <div class="page-layout">
         <!-- Left Sidebar -->
         <aside class="sidebar">
             <nav class="sidebar-nav">
-                <a href="about.html" class="sidebar-link">About</a>
-                <a href="philosophy.html" class="sidebar-link active">Philosophy</a>
-                <a href="blog.html" class="sidebar-link">Blog</a>
-                <a href="projects.html" class="sidebar-link">Projects</a>
-                <a href="publications.html" class="sidebar-link">Publications</a>
-                <a href="tmi.html" class="sidebar-link">TMI</a>
+                <a href="index.html#about" class="sidebar-link">Home</a>
+                <a href="index.html#publications" class="sidebar-link">Research</a>
+                <a href="index.html#awards" class="sidebar-link">Background</a>
+                <a href="index.html#posts" class="sidebar-link" aria-current="page">Posts</a>
             </nav>
         </aside>
 
@@ -138,112 +129,26 @@
                     </div>
                 </div>
 
+                <p>No posts yet.</p>
+
                 <!-- Grid View -->
                 <div class="posts-grid" id="postsGrid">
-                    <a href="philosophy/on-research.html" class="post-card" data-category="research">
-                        <div class="card-image-wrapper">
-                            <div class="card-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);"></div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="card-title">On Research</h2>
-                            <div class="card-meta">
-                                <span class="card-category">Research</span>
-                                <span class="card-date">Jan 2025</span>
-                            </div>
-                        </div>
-                    </a>
 
-                    <a href="philosophy/on-mathematics.html" class="post-card" data-category="mathematics">
-                        <div class="card-image-wrapper">
-                            <div class="card-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="card-title">On Mathematics</h2>
-                            <div class="card-meta">
-                                <span class="card-category">Mathematics</span>
-                                <span class="card-date">Dec 2024</span>
-                            </div>
-                        </div>
-                    </a>
 
-                    <a href="philosophy/on-applications.html" class="post-card" data-category="applications">
-                        <div class="card-image-wrapper">
-                            <div class="card-placeholder" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);"></div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="card-title">On Applications</h2>
-                            <div class="card-meta">
-                                <span class="card-category">Applications</span>
-                                <span class="card-date">Nov 2024</span>
-                            </div>
-                        </div>
-                    </a>
 
-                    <a href="philosophy/questions.html" class="post-card" data-category="research">
-                        <div class="card-image-wrapper">
-                            <div class="card-placeholder" style="background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);"></div>
-                        </div>
-                        <div class="card-content">
-                            <h2 class="card-title">Questions I Keep Returning To</h2>
-                            <div class="card-meta">
-                                <span class="card-category">Research</span>
-                                <span class="card-date">Oct 2024</span>
-                            </div>
-                        </div>
-                    </a>
                 </div>
 
                 <!-- List View -->
                 <div class="posts-list" id="postsList">
-                    <a href="philosophy/on-research.html" class="post-row" data-category="research">
-                        <div class="row-meta">
-                            <span class="row-category">Research</span>
-                            <span class="row-date">Jan 2025</span>
-                        </div>
-                        <div class="row-content">
-                            <h2 class="row-title">On Research</h2>
-                            <p class="row-excerpt">What drives me? What kind of problems excite me? How do I approach mathematical thinking?</p>
-                        </div>
-                    </a>
 
-                    <a href="philosophy/on-mathematics.html" class="post-row" data-category="mathematics">
-                        <div class="row-meta">
-                            <span class="row-category">Mathematics</span>
-                            <span class="row-date">Dec 2024</span>
-                        </div>
-                        <div class="row-content">
-                            <h2 class="row-title">On Mathematics</h2>
-                            <p class="row-excerpt">Is mathematics discovery or invention? What role does beauty play in my work?</p>
-                        </div>
-                    </a>
 
-                    <a href="philosophy/on-applications.html" class="post-row" data-category="applications">
-                        <div class="row-meta">
-                            <span class="row-category">Applications</span>
-                            <span class="row-date">Nov 2024</span>
-                        </div>
-                        <div class="row-content">
-                            <h2 class="row-title">On Applications</h2>
-                            <p class="row-excerpt">The relationship between theory and practice. What makes a good application of mathematics?</p>
-                        </div>
-                    </a>
 
-                    <a href="philosophy/questions.html" class="post-row" data-category="research">
-                        <div class="row-meta">
-                            <span class="row-category">Research</span>
-                            <span class="row-date">Oct 2024</span>
-                        </div>
-                        <div class="row-content">
-                            <h2 class="row-title">Questions I Keep Returning To</h2>
-                            <p class="row-excerpt">The questions that keep me up at night, the ones I find myself returning to again and again.</p>
-                        </div>
-                    </a>
                 </div>
             </div>
         </main>
     </div>
 
-    <footer class="copyright-footer">© Jaehyun Park</footer>
+    <footer class="copyright-footer">Updated <time datetime="2026-10-11">October 11, 2026</time></footer>
 
     <script src="script.js"></script>
     <script>

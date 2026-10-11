@@ -1,36 +1,68 @@
-# jade-ailurus.github.io
+# Jaehyun Park — academic website
 
-Personal academic website for PhD applications in Applied Mathematics & Operations Research.
+A static academic website with the essential introduction, research, background,
+and contact information on one page.
 
 ## Structure
 
-- `index.html` - Main page with hexagonal navigation (cube viewed from corner)
-- `about.html` - Personal introduction, contact, CV link
-- `philosophy.html` - Research philosophy and driving questions
-- `research-notes.html` - Blog/research notes
-- `documents.html` - SOP, transcript, writing samples
-- `publications.html` - Papers with motivating questions
-- `projects.html` - Research projects with driving questions
-- `cv.html` - Full CV
+- `index.html`: the main profile, ordered as introduction, Education,
+  Publication, Projects, Research Experience, Awards & Scholarships,
+  Service and Leadership, Skills, and Posts. The top navigation groups these as
+  Research (Publication, Projects, Research Experience), Background
+  (Awards, Service, Skills), and Posts. The CV link in the introduction opens
+  the public PDF.
+  `#coursework` smoothly opens the course list in Education.
+- `profile.css` and `profile.js`: the main profile's presentation and interactions.
+- `academic.css`: shared typography and colors for supporting pages.
+- `docs/cv.pdf`: the public CV.
+- `projects/`: concise project details.
+- `letters/academic-journey.html`: "How My Research Interests Evolved", linked
+  from the introduction's research-proposal link and Posts.
+- `blog/post-1.html` and `blog/post-2.html`: posts with a TBD body, using the
+  same template as the academic-journey essay.
+- `blog.html`, `blog/`, `philosophy.html`, and `philosophy/`: retained supporting
+  pages; the five removed essays are excluded from the post listings.
+- `styles.css`, `list.css`, `post.css`, and `script.js`: styles and interactions
+  used by the existing article and listing pages.
+- `about.html`, `projects.html`, `publications.html`, and `tmi.html`: compatibility
+  redirects to sections of the main profile.
+- `documents.html` and `cv.html`: compatibility redirects to the public CV.
 
-## Setup
+## Updating content
 
-1. Add your PDF documents to the `docs/` folder:
-   - `cv.pdf`
-   - `sop.pdf`
-   - `transcript.pdf`
-   - `writing-sample.pdf`
-   - etc.
+Keep the profile, project summaries, and public CV consistent. Clearly distinguish
+work in preparation from submitted or published work, and describe only results
+and contributions that can be substantiated.
 
-2. Edit each HTML file to add your content
+Use the supplied CV as the source of truth for profile content. Preserve its
+wording and facts except for explicitly requested redactions; do not add inferred
+research claims, rewrite personal statements, or omit details without direction.
+Keep section and item order as requested. Use four type sizes (48, 28, 20, 16px),
+black text on white, and blue for content hyperlinks. Navigation is black, with
+the currently viewed section in bold. Preserve supplied essay text; the two
+technical posts intentionally show only TBD until their content is provided.
+Use `Mon YYYY–Mon YYYY` for date ranges and `Mon YYYY–present` for ongoing work.
+Keep semester-only and year-only dates at their original precision.
 
-3. Push to GitHub and enable GitHub Pages
+Confidential research titles and technical details must be omitted from every
+public file, including HTML source, metadata, downloadable documents, and assets.
+Visual blur does not remove information from the source. Use a neutral placeholder
+when a manuscript cannot yet be described publicly. Keep private CV source files
+and unredacted application materials outside this repository.
 
-## Local Preview
+## Local preview
 
-```bash
-# Using Python
-python -m http.server 8000
+Run this command from the repository directory:
 
-# Then open http://localhost:8000
+```powershell
+python -m http.server 8000 --bind 127.0.0.1
 ```
+
+Open <http://127.0.0.1:8000/>. This starts a local preview; changing these files does
+not by itself publish the site. Review the public files before deploying.
+
+## Publishing
+
+GitHub Pages serves the repository root from `main` at
+<https://jade-ailurus.github.io/>. Pushing a reviewed commit to `main` triggers
+deployment. Only the redacted public CV belongs in this repository.

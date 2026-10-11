@@ -1,220 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaehyun Park</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="list.css">
-    <style>
-        .home-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-            gap: 3rem;
-            min-height: calc(100vh - 60px - 6rem);
-            padding-top: 4rem;
-        }
-
-        .home-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex: 1;
-            max-width: 45%;
-        }
-
-        .home-text-top {
-            /* 상단 텍스트 영역 */
-        }
-
-        .home-name {
-            font-family: var(--font-main);
-            font-size: 3.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.8rem;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-        }
-
-        .home-subtitle {
-            font-family: var(--font-main);
-            font-size: 2rem;
-            font-weight: 400;
-            color: var(--text-secondary);
-            line-height: 1.4;
-            margin-bottom: 2.75rem;
-        }
-
-        .home-welcome {
-            font-family: var(--font-main);
-            font-size: 1.7rem;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-
-        .home-logo {
-            margin-top: auto;
-            padding-top: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .home-logo-text {
-            font-family: var(--font-main);
-            font-size: 0.9rem;
-            font-weight: 300;
-            color: var(--text-secondary);
-        }
-
-        .home-logo img {
-            height: 40px;
-            width: auto;
-            opacity: 0.8;
-            transition: opacity 0.2s ease;
-        }
-
-        .home-logo a:hover img {
-            opacity: 1;
-        }
-
-        .home-image-wrapper {
-            flex: 1;
-            max-width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .home-image {
-            width: 100%;
-            flex: 1;
-            border-radius: 24px;
-            transition: background 0.3s ease;
-        }
-
-        .daily-color-note {
-            font-family: 'Courier New', monospace;
-            font-size: 0.75rem;
-            color: #3a3a3c;
-            text-align: right;
-            opacity: 0.85;
-            line-height: 1.4;
-            padding-top: 2rem;
-        }
-
-        [data-theme="dark"] .daily-color-note {
-            color: #b0b0b5;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) .daily-color-note {
-                color: #b0b0b5;
-            }
-        }
-
-        @media (max-width: 1100px) {
-            .home-content {
-                flex-direction: column;
-                gap: 2rem;
-                align-items: flex-start;
-            }
-
-            .home-text {
-                max-width: 100%;
-            }
-
-            .home-image-wrapper {
-                width: 100%;
-                max-width: 400px;
-            }
-
-            .home-logo {
-                margin-top: 2rem;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .home-name {
-                font-size: 2.5rem;
-            }
-
-            .home-subtitle {
-                font-size: 1.5rem;
-            }
-
-            .home-welcome {
-                font-size: 1.25rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jaehyun Park | Curriculum Vitae">
+  <title>Jaehyun Park | Research &amp; CV</title>
+  <link rel="stylesheet" href="profile.css">
+  <script src="profile.js" defer></script>
 </head>
 <body>
-    <!-- Top Header -->
-    <header class="top-header">
-        <div class="header-left">
-            <a href="index.html" class="header-logo">Jaehyun Park</a>
-            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
-                <span class="toggle-icon">&#9776;</span>
-            </button>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a class="wordmark" href="index.html#about" data-nav-key="home" aria-current="location">Jaehyun Park</a>
+      <div class="section-links" id="section-links">
+        <a href="#publications" data-nav-key="research">Research</a>
+        <a href="#awards" data-nav-key="activities">Background</a>
+        <a href="#posts" data-nav-key="posts">Posts</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main" class="profile">
+    <section id="about" data-nav-section="home" class="intro" aria-labelledby="name">
+      <div class="intro-copy">
+        <h1 id="name">Jaehyun Park</h1>
+        <h2 class="intro-label">Research Interests</h2>
+        <p class="lead">Reality is abstract and high-dimensional. However, what we perceive are but fragments of it, colored by our own minds. From these fragments, how might we come to know the world more deeply?</p>
+        <p class="intro-text">For a fuller account of my perspective, see <a href="letters/academic-journey.html">my research proposal</a>.</p>
+        <div class="contact-links" aria-label="Contact and profiles">
+          <a class="cv-link" href="docs/cv.pdf">Curriculum vitae <span aria-hidden="true">↗</span></a>
+          <a href="mailto:geneouspark@snu.ac.kr">Email</a>
         </div>
-    </header>
+      </div>
+      <img class="profile-photo" src="images/jaehyun-park-profile-2026.png" alt="Jaehyun Park" width="1200" height="1600" decoding="async" fetchpriority="high">
+    </section>
+    <section id="education" data-nav-section="home" class="section" aria-labelledby="education-heading">
+      <span id="background" class="anchor-alias" aria-hidden="true"></span>
+      <h2 id="education-heading">Education</h2>
+      <div class="group-content">
+          <div class="background-entry">
+            <div class="entry-heading"><h3>Seoul National University <a class="school-link" href="https://en.snu.ac.kr/" aria-label="Seoul National University English website">[Link]</a></h3><span class="date">Mar 2020–Aug 2027 (expected)</span></div>
+            <ul class="degree-list">
+              <li>B.Sc. in Mathematics <span>GPA 4.02/4.3</span></li>
+              <li>B.Sc. in Mathematical Modeling for Complex Systems <span>GPA 4.3/4.3</span></li>
+              <li>B.Eng. in Architectural Engineering <span>GPA 3.96/4.3</span></li>
+            </ul>
+            <p class="small-note">Completed mandatory military service.</p>
+          </div>
+          <div class="background-entry">
+            <div class="entry-heading"><h3>Purdue University <a class="school-link" href="https://www.purdue.edu/" aria-label="Purdue University website">[Link]</a></h3><span class="date">Aug 2025–Dec 2025</span></div>
+            <p>Exchange student in Mathematics and Industrial Engineering.</p>
+          </div>
+        </div>
+<details id="coursework" class="coursework">
+        <summary aria-controls="coursework-content">Selected Coursework</summary>
+        <div class="group-content" id="coursework-content">
+          <table class="course-table">
+            <caption>Seoul National University</caption>
+            <thead><tr><th scope="col">Course</th><th scope="col">Term</th><th scope="col">Grade</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Mathematical Algorithms 2 <em>(Graduate; Transformers)</em></th><td>Fall 2026</td><td>In progress</td></tr>
+              <tr><th scope="row">Topics in Mathematics 2 <em>(Analytic Number Theory)</em></th><td>Fall 2026</td><td>In progress</td></tr>
+              <tr><th scope="row">Algorithm</th><td>Summer 2026</td><td>A+</td></tr>
+              <tr><th scope="row">Measure Theory and Probability</th><td>Spring 2026</td><td>A−</td></tr>
+              <tr><th scope="row">Introduction to Mathematical Analysis with Practice 1</th><td>Spring 2026</td><td>A+</td></tr>
+              <tr><th scope="row">Differential Equations</th><td>Summer 2025</td><td>A+</td></tr>
+              <tr><th scope="row">Advanced Calculus 1</th><td>Spring 2025</td><td>A+</td></tr>
+              <tr><th scope="row">Linear Algebra</th><td>Spring 2025</td><td>A+</td></tr>
+              <tr><th scope="row">AI &amp; Big Data Basics</th><td>Spring 2025</td><td>A0</td></tr>
+              <tr><th scope="row">Microeconomics</th><td>Summer 2023</td><td>A0</td></tr>
+              <tr><th scope="row">Macroeconomics</th><td>Summer 2021</td><td>A+</td></tr>
+            </tbody>
+          </table>
+          <table class="course-table">
+            <caption>Purdue University — Fall 2025 <span>Exchange</span></caption>
+            <thead><tr><th scope="col">Course</th><th scope="col">Code</th><th scope="col">Grade</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Introduction to Convex Optimization <em>(Graduate)</em></th><td>IE56100</td><td>A+</td></tr>
+              <tr><th scope="row">Linear Programming &amp; Optimization Techniques</th><td>MA42100</td><td>A0</td></tr>
+              <tr><th scope="row">Operations Research — Stochastic Models</th><td>IE33600</td><td>A+</td></tr>
+              <tr><th scope="row">Probability</th><td>MA41600</td><td>A+</td></tr>
+              <tr><th scope="row">Introduction to Discrete Mathematics</th><td>MA37500</td><td>A+</td></tr>
+              <tr><th scope="row">Engineering Economics</th><td>IE34300</td><td>A+</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+<section id="publications" data-nav-section="research" class="section" aria-labelledby="publications-heading">
+      <span id="research" class="anchor-alias" aria-hidden="true"></span>
+      <h2 id="publications-heading">Publication</h2>
+      <h3 class="subsection-heading">Manuscripts in Preparation</h3>
+<article class="research-entry">
+        <div class="entry-heading"><h4>AAAAAAA (TBD)</h4></div>
+        <p class="entry-meta">In preparation with <a href="https://dabeenl.github.io/">Dabeen Lee</a> for submission to Mathematical Programming.<br>Sep 2026–Dec 2026 (expected)</p>
+        <p>Title and research details withheld.</p>
+      </article>
+<article class="research-entry">
+        <div class="entry-heading"><h4>Inverse Variational Inequalities: Identification and Statistical Estimation</h4></div>
+        <p class="entry-meta">In preparation with <a href="https://taewoojlee.github.io/">Taewoo Lee</a> for submission to Operations Research (INFORMS).<br>Feb 2026–Nov 2026 (expected)</p>
+        <p>This paper develops statistical estimators for equilibrium models from noisy observations, with consistency and asymptotic guarantees under different identification conditions.</p>
+      </article>
+    </section>
+<section id="projects" data-nav-section="research" class="section" aria-labelledby="projects-heading">
 
-    <!-- Theme Toggle (Bottom Right) -->
-    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
-        <span class="theme-icon">◐</span>
-    </button>
+      <h2 id="projects-heading">Projects</h2>
+      <article class="research-entry">
+        <div class="entry-heading"><h3>Perturbation Analysis of a Pre-trained SPO Framework</h3><span class="date">Nov 2025–Dec 2025</span></div>
+        <p>Investigating graph-model pre-training with conventional losses followed by SPO+ fine-tuning, and studying perturbation robustness through distributionally robust optimization and assumptions on graph topology.</p>
+        <a class="text-link" href="projects/spo-perturbation.html">Project details <span aria-hidden="true">→</span></a>
+      </article>
+<article class="research-entry">
+        <div class="entry-heading"><h3>Operating Cost Optimization for Logistics Centers</h3><span class="date">2024 Architecture Graduation Exhibition</span></div>
+        <p>Simulated demand in Seoul; used Gurobi and OSMnx to solve vehicle-routing and traveling-salesperson problems and visualize routes. Optimized photovoltaic installation area to reduce building energy costs.</p>
+        <a class="text-link" href="projects/logistics-optimization.html">Project details <span aria-hidden="true">→</span></a>
+      </article>
+    </section>
+<section id="research-experience" data-nav-section="research" class="section" aria-labelledby="research-experience-heading">
 
-    <div class="page-layout">
-        <!-- Left Sidebar -->
-        <aside class="sidebar">
-            <nav class="sidebar-nav">
-                <a href="about.html" class="sidebar-link">About</a>
-                <a href="philosophy.html" class="sidebar-link">Philosophy</a>
-                <a href="blog.html" class="sidebar-link">Blog</a>
-                <a href="projects.html" class="sidebar-link">Projects</a>
-                <a href="publications.html" class="sidebar-link">Publications</a>
-                <a href="tmi.html" class="sidebar-link">TMI</a>
-            </nav>
-        </aside>
+      <h2 id="research-experience-heading">Research Experience</h2>
+      <div class="group-content">
+          <div class="background-entry">
+            <div class="entry-heading"><h3>Optimization and Algorithms Lab, SNU Math</h3><span class="date">Sep 2026–present</span></div>
+            <p class="entry-meta">Advisor: <a href="https://dabeenl.github.io/">Dabeen Lee</a></p>
+            <ul class="cv-bullets"><li>Studying looped Transformers and fixed-point reasoners.</li><li>Co-authoring a manuscript.</li></ul>
+          </div>
+          <div class="background-entry">
+            <div class="entry-heading"><h3>Operations Management, SNU Business</h3></div>
+            <p class="entry-meta">Advisor: <a href="https://taewoojlee.github.io/">Taewoo Lee</a></p>
+            <p class="phase-label entry-heading"><span>Research collaboration</span><span class="date">Feb 2026–present</span></p>
+            <p>Co-authoring a manuscript on identification and statistical estimation in inverse variational inequalities.</p>
+            <p class="phase-label entry-heading"><span>Reading and study</span><span class="date">Apr 2025–Aug 2025</span></p>
+            <ul class="cv-bullets"><li>Studied linear programming (Bertsimas) and convex optimization (Boyd).</li><li>Read classic optimization papers from <em>Operations Research</em> and <em>Mathematical Programming</em>.</li></ul>
+          </div>
+        </div>
+    </section>
+<section id="awards" data-nav-section="activities" class="section" aria-labelledby="awards-heading">
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="content-container">
-                <div class="home-content">
-                    <div class="home-text">
-                        <div class="home-text-top">
-                            <h1 class="home-name">Jaehyun Park</h1>
-                            <p class="home-subtitle">
-                                PhD Applicant in<br>
-                                Operations Research &<br>
-                                Applied Mathematics
-                            </p>
-                            <p class="home-welcome">Welcome to my website!</p>
-                        </div>
-                        <div class="home-logo">
-                            <a href="https://en.snu.ac.kr/index.html" target="_blank">
-                                <img src="images/snu_logo.png" alt="Seoul National University">
-                            </a>
-                            <span class="home-logo-text">Current affiliation</span>
-                        </div>
-                    </div>
-                    <div class="home-image-wrapper">
-                        <div class="home-image" id="dailyColorBox"></div>
-                        <p class="daily-color-note" id="dailyColorNote"></p>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
+      <h2 id="awards-heading">Awards &amp; Scholarships</h2>
+      <ul class="group-content compact-list">
+          <li><div class="entry-heading"><strong>Dean’s List and Semester Honors</strong><span class="date">Fall 2025</span></div><span>Purdue University</span></li>
+          <li><div class="entry-heading"><strong>Global Leadership Program Exchange Scholarship</strong><span class="date">Fall 2025</span></div><span>SNU College of Engineering; support for study abroad.</span></li>
+          <li><div class="entry-heading"><strong>SNU DAAE Alumni Scholarship for Academic Excellence</strong><span class="date">Fall 2023</span></div><span>Sole recipient, Department of Architecture and Architectural Engineering</span></li>
+        </ul>
+    </section>
+<section id="service" data-nav-section="activities" class="section" aria-labelledby="service-heading">
 
-    <footer class="copyright-footer">© Jaehyun Park</footer>
+      <h2 id="service-heading">Service and Leadership</h2>
+      <div class="group-content">
+          <div class="background-entry"><div class="entry-heading"><strong>Society of Engineering Network and Service</strong><span class="date">Sep 2023–Feb 2025</span></div><p>Led engineering outreach for high-school students and STEM activities for middle-school students; participated in educational programs for underrepresented students.</p></div>
+          <div class="background-entry"><div class="entry-heading"><strong>Student Council</strong><span class="date">Mar 2021–Dec 2021</span></div><p>Managed digital communications and designed event announcements, campus banners, and graduation-exhibition posters.</p></div>
+        </div>
+    </section>
+<section id="skills" data-nav-section="activities" class="section" aria-labelledby="skills-heading">
 
-    <script src="script.js"></script>
+      <h2 id="skills-heading">Skills</h2>
+      <div class="group-content">
+          <p><strong>Programming and tools:</strong> Python, MATLAB, R, Julia, C/C++, LaTeX, Gurobi, OSMnx.</p>
+          <p><strong>Engineering software:</strong> Midas, ETABS, Rhino, Grasshopper, AutoCAD.</p>
+          <p><strong>Languages:</strong> Korean (native), English (advanced).</p>
+        </div>
+    </section>
+<section id="posts" data-nav-section="posts" class="section" aria-labelledby="posts-heading">
+      <span id="notes" class="anchor-alias" aria-hidden="true"></span>
+      <h2 id="posts-heading">Posts</h2>
+      <ul class="posts-list">
+        <li><a href="letters/academic-journey.html">How My Research Interests Evolved</a></li>
+
+        <li><a href="blog/post-1.html">Understanding Gradient Flow in Deep Networks</a></li>
+        <li><a href="blog/post-2.html">Getting Started with Convex Optimization in Python</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer class="site-footer"><span>Updated <time datetime="2026-10-11">October 11, 2026</time></span></footer>
 </body>
 </html>

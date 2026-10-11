@@ -1,0 +1,155 @@
+/* Shared academic-page presentation. Loaded after the legacy layout styles. */
+:root,
+:root[data-theme],
+:root:not([data-theme="light"]) {
+    color-scheme: light;
+    --bg-primary: #ffffff !important;
+    --bg-secondary: #ffffff !important;
+    --text-primary: #000000 !important;
+    --text-secondary: #000000 !important;
+    --line-color: #dddddd !important;
+    --font-main: Arial, sans-serif !important;
+}
+
+html,
+body {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+body,
+body * {
+    color: #000000 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+}
+
+body h1,
+body .page-title,
+body .post-title {
+    font-size: 48px !important;
+    font-weight: 700;
+}
+
+body h2 {
+    font-size: 28px !important;
+    font-weight: 700;
+}
+
+body h3,
+body h4,
+body h5,
+body h6,
+body .card-title,
+body .row-title {
+    font-size: 20px !important;
+    font-weight: 700;
+}
+
+body :is(h1, h2, h3, h4, h5, h6) *,
+body :is(.page-title, .post-title, .card-title, .row-title) * {
+    font-size: inherit !important;
+}
+
+body a[href],
+body a[href] * {
+    color: #0645ad !important;
+}
+
+body a[href]:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+body :is(.top-header, .sidebar-nav, .sticky-toc) a[href],
+body :is(.top-header, .sidebar-nav, .sticky-toc) a[href] * {
+    color: #000000 !important;
+    font-weight: 400;
+}
+
+body :is(.top-header, .sidebar-nav, .sticky-toc) a[aria-current="page"],
+body :is(.top-header, .sidebar-nav, .sticky-toc) a[aria-current="page"] *,
+body .sticky-toc a.active,
+body .sticky-toc a.active * {
+    font-weight: 700;
+}
+
+body .copyright,
+body .doc-icon {
+    opacity: 1;
+}
+
+.theme-toggle,
+.theme-toggle-fixed {
+    display: none !important;
+}
+
+.card-placeholder {
+    background: #ffffff !important;
+    border: 1px solid var(--line-color);
+}
+
+.sidebar {
+    width: 240px;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.sidebar-link {
+    line-height: 1.4;
+}
+
+.main-content {
+    margin-left: 240px;
+}
+
+.sticky-toc {
+    left: 240px;
+}
+
+.toc-current {
+    white-space: normal;
+}
+
+@media (max-width: 900px) {
+    body h1,
+    body .page-title,
+    body .post-title {
+        font-size: 28px !important;
+    }
+
+    .top-header {
+        z-index: 200;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 80px 2rem 2rem;
+    }
+
+    .sidebar-nav {
+        gap: 0.25rem;
+    }
+
+    .sidebar-link {
+        padding: 0.5rem 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar-collapsed .content-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .sidebar-open .sidebar {
+        pointer-events: auto;
+    }
+
+    .sticky-toc {
+        left: 0;
+    }
+}

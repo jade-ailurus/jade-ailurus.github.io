@@ -66,3 +66,24 @@ not by itself publish the site. Review the public files before deploying.
 GitHub Pages serves the repository root from `main` at
 <https://jade-ailurus.github.io/>. Pushing a reviewed commit to `main` triggers
 deployment. Only the redacted public CV belongs in this repository.
+
+## Business card CV access
+
+On October 29, 2026 the owner explicitly requested the full local CV for people
+holding the business card QR link. Ordinary visits still use docs/cv.pdf.
+
+card-cv.js recognizes a card access key in the URL fragment and decrypts
+docs/card-cv.enc in the visitor's browser. The public asset contains only
+AES-256-GCM ciphertext (12-byte nonce, ciphertext, 16-byte authentication tag).
+The random key is supplied only by the physical QR and private local card files;
+it must never be committed, added to HTML, or bundled with the public site.
+The full PDF, QR image, and QR link must remain outside this repository.
+This authorizes only encrypted card access; the public CV and public References
+policy remain unchanged. Anyone given the complete QR link can view the full CV.
+
+Within-page navigation keeps the decrypted CV available. Reloading after the
+URL fragment has changed to an ordinary section requires scanning the QR again.
+The encrypted CV is a snapshot; when updating it, use a fresh nonce and retain
+the same private key to keep already-printed cards working. The plaintext source
+and current QR are stored locally under OneDrive (2026/26_4 Fall and Card).
+Do not replace the key unless intentionally retiring previously printed cards.

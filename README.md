@@ -65,4 +65,26 @@ not by itself publish the site. Review the public files before deploying.
 
 GitHub Pages serves the repository root from `main` at
 <https://jade-ailurus.github.io/>. Pushing a reviewed commit to `main` triggers
-deployment. Only the redacted public CV belongs in this repository.
+deployment. The default download remains the redacted public CV. The separately authorized
+full CV for printed-card visitors is described below.
+
+## Already-printed business card CV
+
+On October 29, 2026, the owner explicitly selected the existing printed QR
+address (about.html) for access to the full local CV, acknowledging that anyone
+who knows that address can view it. This is an explicit exception for the full
+download, including its existing contents, to the general public-CV restrictions.
+Do not regenerate the physical QR or replace the default public CV.
+
+- about.html redirects to index.html?from=card#about.
+- card-cv.js selects docs/cv-full.pdf only when from=card.
+- Ordinary homepage visits, cv.html, and documents.html still use docs/cv.pdf.
+- The homepage References section remains unpublished.
+- docs/cv-full.pdf is a separate, publicly accessible copy of the approved full
+  CV. The route is a version selector, not an authentication or access boundary.
+  Do not describe this download as password protected or truly private.
+- Navigation within the profile retains the query. A fresh ordinary homepage
+  visit has the public CV; no browser storage grants persistent full-CV mode.
+
+The full PDF source is the owner's local Jaehyun_Park_CV.pdf in OneDrive under
+2026/26_4 Fall. Keep future full-CV updates separate from the public docs/cv.pdf.

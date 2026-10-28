@@ -88,3 +88,45 @@ Do not regenerate the physical QR or replace the default public CV.
 
 The full PDF source is the owner's local Jaehyun_Park_CV.pdf in OneDrive under
 2026/26_4 Fall. Keep future full-CV updates separate from the public docs/cv.pdf.
+
+## Visitor analytics and crawl preference
+
+The owner supplied Umami website ID 59031f73-8a50-4553-9d27-ac58319f4bc5 on
+October 29, 2026. analytics-config.js contains only the public website ID and
+official tracker URL; never put API keys, passwords, or account credentials here.
+analytics.js loads the tracker only on the production HTTPS hostname. It records
+pageviews across content pages and cv_click (version public/full), post_click,
+project_click, and email_click. A click indicates activation, not completed reading.
+The dashboard is the owner's private account at https://cloud.umami.is/.
+
+Allowed campaign values are short letter/number/dot/underscore/hyphen codes for
+utm_source, utm_medium, utm_campaign, utm_content, utm_term, and ref. Do not put
+recipient names or email addresses in these parameters. Keep recipient-code
+mapping privately outside this repository. A link identifies a delivery route,
+not the person using it. It can be forwarded or scanned by automated services.
+
+Example full-CV outreach entry (replace p001 for each actual delivery):
+https://jade-ailurus.github.io/about.html?utm_source=outreach&utm_medium=email&utm_campaign=phd_2027&ref=p001
+Use the root path instead of about.html for the default public CV.
+The unchanged printed QR defaults to business_card / qr / printed_card. Explicit
+email campaign codes override this source label without changing CV selection.
+card-redirect.js preserves the allowlisted values; redirect stubs are not counted.
+
+The first-party sessionStorage entry preserves campaign attribution while moving
+through content in the same tab, expiring after 30 minutes of inactivity. It does
+not grant persistent full-CV mode and contains no recipient names or distinct IDs.
+The tracker strips arbitrary URL query values and hashes, strips referrer query
+data, respects supported DNT/GPC signals and the Umami local opt-out, and does
+not collect session recordings. Browser blocking or disabled scripts can cause
+undercounting. Direct PDF requests do not run the website's pageview tracker.
+
+After adding any new HTML post, run node tools/sync-analytics.cjs, then run
+node tools/sync-analytics.cjs --check before publishing. This keeps the same two
+shared scripts on every content page without making copies for each recipient.
+
+The owner explicitly chose to request no crawling by ANY bot, including ordinary
+search engines. robots.txt uses User-agent: * and Disallow: /. Do not weaken that
+request without direction. This is voluntary crawler policy, not enforced blocking,
+not removal of existing search indexes, and not protection of the public GitHub
+source repository. Stronger controls require a separately protected hosting setup;
+do not claim that a robots file can prevent all user-operated agents or scraping.

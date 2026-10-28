@@ -1,0 +1,4 @@
+# Owner requests no automated crawling, including search engines and AI agents.
+# This is a robots exclusion request, not an enforced access-control mechanism.
+User-agent: *
+Disallow: /
